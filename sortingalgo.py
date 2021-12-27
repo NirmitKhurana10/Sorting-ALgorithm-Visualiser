@@ -7,8 +7,29 @@ root.title("Sorting Algorithm Visualiser")
 root.geometry('900x600+200+80')
 root.config(bg = "#082A36")
 
+def drawData(data):
+    canvas_height = 450
+    canvas_width = 870
+    x_width = canvas_width / (len(data) + 1)
+    offset = 10
+    spacing_bet_rect = 10
+    normalised_data = [i / max(data) for i in data]
+    
+    for i, height in enumerate(normalised_data):
+        x0 = i*x_width + offset + spacing_bet_rect
+        y0 = canvas_height - height * 400  # we have multiplied 400 because we will normalised our values with one
+                                          # one formula so that our data won't exceed our canvas 
+        x1 = (i+1) * x_width
+        y1 = canvas_height
+
+        canvas.create_rectangle(x0,y0,x1,y1, fill= '#E80043')
+        canvas.create_text(x0+2, y0, anchor = SW, text = str(data[i]), font = ('new roman',15,'italic bold'),fill = 'orange')
+
+
 def Generate():
     print("Selected Algorithm: "+ selected_algorithm.get())
+    data = [1,3,6,2,4,7,8,3,9,0,5,7,4,2,8]
+    drawData(data)
 
 selected_algorithm = StringVar()
 # label, buttons, speed scale
