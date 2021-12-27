@@ -50,4 +50,7 @@ speedscale = Scale(root, from_ = 0.1, to = 5.0, resolution = 1, orient = HORIZON
 speedscale.place(x = 620, y = 0)
 
 
+canvas = Canvas(root, width = 870, height = 450, bg = 'black')
+canvas.place(x = 10,y = 130)
+
 root.mainloop()
