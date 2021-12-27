@@ -9,7 +9,7 @@ root.geometry('900x600+200+80')
 root.config(bg = "#082A36")
 data = []
 
-def drawData(data):
+def drawData(data, colorArray):
     canvas.delete('all')
     canvas_height = 450
     canvas_width = 870
@@ -25,12 +25,14 @@ def drawData(data):
         x1 = (i+1) * x_width
         y1 = canvas_height
 
-        canvas.create_rectangle(x0,y0,x1,y1, fill= '#E80043')
+        canvas.create_rectangle(x0,y0,x1,y1, fill = colorArray[i])
         canvas.create_text(x0+2, y0, anchor = SW, text = str(data[i]), font = ('new roman',15,'italic bold'),fill = 'orange')
+
+    root.update_idletasks()
 
 def StartAlgorithm():
     global data
-    bubble_sort(data, drawData)
+    bubble_sort(data, drawData,speedscale.get())
 
 
 def Generate():
@@ -43,7 +45,7 @@ def Generate():
     for _ in range(sizeevalue):
         # we will add that speed scaled by appending it
         data.append(random.randrange(minivalue, maxivalue+1))
-    drawData(data)
+    drawData(data, ['#A90042' for x in range(len(data))])
 
 selected_algorithm = StringVar()
 # label, buttons, speed scale

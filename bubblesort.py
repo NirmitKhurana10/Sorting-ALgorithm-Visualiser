@@ -1,11 +1,10 @@
 import time
 
-
-def bubble_sort(data, drawData):
+def bubble_sort(data, drawData,timeTick):
     for _ in range(len(data) - 1):
         for j in range(len(data)-1):
             if data[j] > data[j+1]:
                 data[j],data[j+1] = data[j+1],data[j]
-                drawData(data)
-                time.sleep(0.2)
-
+                drawData(data, ['yellow' if x == j or x == j+1 else "#A90042" for x in range(len(data))])
+                time.sleep(timeTick) # we can set stime as per our speed scale now
+    drawData(data, ["yellow" for x in range(len(data))])
