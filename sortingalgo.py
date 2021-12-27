@@ -1,6 +1,7 @@
 from tkinter import *
 from tkinter import ttk
 import random
+from bubblesort import bubble_sort
 
 root = Tk()
 root.title("Sorting Algorithm Visualiser")
@@ -29,7 +30,7 @@ def drawData(data):
 
 def StartAlgorithm():
     global data
-
+    bubble_sort(data, drawData)
 
 
 def Generate():
