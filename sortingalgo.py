@@ -28,7 +28,40 @@ def drawData(data):
 
 def Generate():
     print("Selected Algorithm: "+ selected_algorithm.get())
-    data = [1,3,6,2,4,7,8,3,9,0,5,7,4,2,8]
+    
+    # we will take values from our speed scale now
+
+    try : 
+        minivalue = int(minvalue.get())
+    except :  # if value is wrong we will keep by default as 1
+        minivalue = 1 
+    
+    try : 
+        maxivalue = int(maxvalue.get())
+    except :  # if value is wrong we will keep by default as 100
+        maxivalue = 100 
+
+    try : 
+        sizeevalue = int(sizevalue.get())
+    except :  # if value is wrong we will keep by default as 1
+        sizeevalue = 10
+
+    if minivalue < 0:
+        minivalue = 0
+    if maxivalue > 100:
+        maxivalue = 100
+    if sizeevalue > 40 or sizeevalue < 3:
+        sizeevalue = 29
+
+      # if in case max value is smaller than min value we will swap data
+
+    if minivalue > maxivalue:
+        minivalue,maxivalue = maxivalue,minivalue
+         
+    data = []
+    for _ in range(sizeevalue):
+        # we will add that speed scaled by appending it
+        data.append(random.randrange(minivalue, maxivalue+1))
     drawData(data)
 
 selected_algorithm = StringVar()
