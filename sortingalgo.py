@@ -12,6 +12,7 @@ root.config(bg = "#082A46")
 mainlabel = Label(root, text = "Algorithm : ", font = ("new roman", 16,"italic bold"),bg = "#05897A",width = 10, fg = 'black', relief = GROOVE, bd = 5)
 mainlabel.place(x=0,y=0)
 
-
-
+algo_menu = ttk.Combobox(root, width=15, font = ("new roman", 19,'itaclic bold'), textvariable = selected_algorithm, values=['Bubble Sort','Merge Sort','Quick Sort'])
+algo_menu.place(x=145, y=0)
+algo_menu.current(0)
 root.mainloop()
