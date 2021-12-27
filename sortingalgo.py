@@ -5,7 +5,7 @@ import random
 root = Tk()
 root.title("Sorting Algorithm Visualiser")
 root.geometry('900x600+200+80')
-root.config(bg = "#082A46")
+root.config(bg = "#082A36")
 
 def Generate():
     print("Selected Algorithm: ")
@@ -25,5 +25,19 @@ random_generate.place(x = 750, y = 60)
 
 sizevaluelable = Label(root, text = "Size : ", font = ("new roman",12,"italic bold"), bg = "#0E6DA5",width = 10, fg = "black", height = 2, relief = GROOVE, bd = 5)
 sizevaluelable.place(x = 0, y = 60)
+sizevalue = Scale(root, from_ = 0, to = 30, resolution = 1, orient = HORIZONTAL, font = ('arial', 14,"italic bold"), relief = GROOVE, bd = 2, width = 10)
+sizevalue.place(x = 120, y = 60)
+
+
+minvaluelable = Label(root, text = "Min Value : ", font = ("new roman",12,"italic bold"), bg = "#0E6DA5",width = 10, fg = "black", height = 2, relief = GROOVE, bd = 5)
+minvaluelable.place(x = 250, y = 60)
+minvalue = Scale(root, from_ = 0, to = 10, resolution = 1, orient = HORIZONTAL, font = ('arial', 14,"italic bold"), relief = GROOVE, bd = 2, width = 10)
+minvalue.place(x = 370, y = 60)
+
+
+maxvaluelable = Label(root, text = "Max Value : ", font = ("new roman",12,"italic bold"), bg = "#0E6DA5",width = 10, fg = "black", height = 2, relief = GROOVE, bd = 5)
+maxvaluelable.place(x = 500, y = 60)
+maxvalue = Scale(root, from_ = 0, to = 100, resolution = 1, orient = HORIZONTAL, font = ('arial', 14,"italic bold"), relief = GROOVE, bd = 2, width = 10)
+maxvalue.place(x = 620, y = 60)
 
 root.mainloop()
