@@ -36,11 +36,10 @@ def merge(data, left, middle, right, drawData, timeTick):
         else:
             data[dataidx] = rightpart[rightidx]
             rightidx += 1
+
     drawData(data, ['green' if x >= left and x <= right else 'white' for x in range(len(data))])
     time.sleep(timeTick)
     
-
-
 def colorArray(Length, left, middle, right):
     colorArray = []
 
@@ -57,3 +56,7 @@ def colorArray(Length, left, middle, right):
 
 
         
+'''data = [1,3,6,32,7,654,3453,87,234,78,35,654]
+        merge_sort(data, 0, 0)
+print(data)'''
+    
