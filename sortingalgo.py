@@ -49,7 +49,7 @@ def StartAlgorithm():
         
 def Generate():
     global data
-    print("Selected Algorithm: "+ selected_algorithm.get())
+    print("Selected Algorithms to the last: "+ selected_algorithm.get())
     minivalue = int(minvalue.get())
     maxivalue = int(maxvalue.get())
     sizeevalue = int(sizevalue.get())

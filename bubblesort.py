@@ -10,4 +10,3 @@ def bubble_sort(data, drawData,timeTick):
     drawData(data, ["yellow" for x in range(len(data))])
 
 
-# my name is nirmit
